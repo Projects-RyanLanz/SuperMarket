@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SuperMarket.DTO;
 using SuperMarket.Models;
@@ -30,6 +31,7 @@ namespace SuperMarket.Controllers{
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryDTO categoryDTO){
             
             try{
